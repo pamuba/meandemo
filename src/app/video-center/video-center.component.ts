@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Video } from '../video';
 
 @Component({
   selector: 'app-video-center',
@@ -12,4 +13,10 @@ export class VideoCenterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  videos: Video[] = [
+    {"_id":"1", "title":"Title1", "url":"Url1", "description":"Description1"},
+    {"_id":"2", "title":"Title2", "url":"Url2", "description":"Description2"},
+    {"_id":"3", "title":"Title3", "url":"Url3", "description":"Description3"},
+    {"_id":"4", "title":"Title4", "url":"Url4", "description":"Description4"},
+  ]
 }
