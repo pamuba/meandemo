@@ -10,6 +10,7 @@ import { VideoDetailComponent } from './video-detail/video-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { VideoService } from './video.service';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { VideoService } from './video.service';
     HomeComponent,
     VideoCenterComponent,
     VideoListComponent,
-    VideoDetailComponent
+    VideoDetailComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
