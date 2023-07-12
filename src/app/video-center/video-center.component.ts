@@ -45,4 +45,17 @@ export class VideoCenterComponent implements OnInit {
     .subscribe(resUpdatedVideo => {})
     this.selectedVideo = null
   }
+  onDeleteVideoEvent(video:Video){
+    // let videoArray = this.videos
+
+    this._videoService.deleteVideo(video)
+        .subscribe(resDeletedVideo => {
+          for (let i = 0; i < this.videos.length; i++) {
+            if(this.videos[i]._id === video._id){
+              this.videos.splice(i,1)
+            }
+          }
+        });
+        this.selectedVideo = null
+  }
 }

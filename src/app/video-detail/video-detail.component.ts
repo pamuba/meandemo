@@ -10,6 +10,7 @@ export class VideoDetailComponent implements OnInit {
 
   @Input() public video!:Video
   @Output() public updateVideoEvent: EventEmitter<any> = new EventEmitter
+  @Output() public deleteVideoEvent: EventEmitter<any> = new EventEmitter
   public editTitle: boolean = false
   constructor() { }
 
@@ -24,6 +25,9 @@ export class VideoDetailComponent implements OnInit {
 
   updateVideo(){
     this.updateVideoEvent.emit(this.video)
+  }
+  deleteVideo(){
+    this.deleteVideoEvent.emit(this.video)
   }
 
 }
