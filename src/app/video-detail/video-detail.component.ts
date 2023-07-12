@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Video } from '../video';
 
 @Component({
@@ -9,6 +9,7 @@ import { Video } from '../video';
 export class VideoDetailComponent implements OnInit {
 
   @Input() public video!:Video
+  @Output() public updateVideoEvent: EventEmitter<any> = new EventEmitter
   public editTitle: boolean = false
   constructor() { }
 
@@ -19,6 +20,10 @@ export class VideoDetailComponent implements OnInit {
   }
   ngOnChanges(){
     this.editTitle = false
+  }
+
+  updateVideo(){
+    this.updateVideoEvent.emit(this.video)
   }
 
 }
